@@ -1,9 +1,10 @@
 <?php
-include 'classes/Animal.php';
-include 'classes/Vertebre.php';
-include 'classes/Mammiferes.php';
-include 'classes/Reptiles.php';
-include 'classes/Poisson.php';
+date_default_timezone_set('Europe/Paris');
+require_once 'functions/autoloader.php';
+spl_autoload_register('classAutoLoader');
 
 $chat = new Mammiferes();
 var_dump($chat);
+
+$form = new Form('#', 'frmConfig');
+echo $form->displayForm();
