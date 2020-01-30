@@ -23,12 +23,10 @@ class Form
         }
         $html .= '>';
 
-        foreach ($this->iniFile as $input) {
-            $html .= $input['input_name'];
-            $html .= $input['input_surname'];
-            $html .= $input['input_password'];
-            $html .= $input['input_cfrmpass'];
-            $html .= $input['input_mail'];
+        foreach ($this->iniFile as $key => $value) {
+            $html .= "<ul>";
+            $html .= "<li>" . $key . "</li>";
+            $html .= "</ul>";
         }
 
         $html .= '</form>';

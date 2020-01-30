@@ -6,7 +6,7 @@ require 'functions/debug.php';
 
 
 $chat = new Mammiferes();
-var_dump($chat);
 
 $form = new Form('#', 'frmconf');
 echo $form->displayForm();
+
