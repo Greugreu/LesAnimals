@@ -8,5 +8,9 @@ require 'functions/debug.php';
 $chat = new Mammiferes();
 
 $form = new Form('#', 'frmconf');
-echo $form->displayForm();
 
+$html = $form->beginHtml('Je fais des formulaires en objet');
+$html .= $form->displayForm();
+$html .= $form->endHtml();
+
+echo $html;
