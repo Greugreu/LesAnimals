@@ -20,6 +20,7 @@ class Form
         $html .= '<meta charset="utf-8" />';
         $html .= '<meta name="viewport" content="width=device-width, initial-scale=no" />';
         $html .= '<title>' . $title . '</title>';
+        $html .= '<link href="assets/css/styles.css" rel="stylesheet" />';
         $html .= '</head>';
         $html .= '<body>';
 
