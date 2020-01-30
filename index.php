@@ -4,6 +4,9 @@ require_once 'functions/autoloader.php';
 spl_autoload_register('classAutoLoader');
 require 'functions/debug.php';
 
+Demo::afficherMessage('Coucou');
+
+Log::logWrite('Bonjour Michel');
 
 $chat = new Mammiferes();
 
