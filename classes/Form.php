@@ -41,21 +41,26 @@ class Form
             $tagType = explode(":", $key);
             
             if ($tagType [0] === "input") {
-                if ($this->iniFile[$key]["labelContent"] !== false) {
+                if (!empty($this->iniFile[$key]["labelContent"])) {
                     $html .= '<div>';
                     $html .=    '<label for="' .
                                 $tagType[1] . '">' .
                                 ucfirst($tagType[1]) . " " .
                                 '</label>';
                 }
-                    $html .=    '<input type="' .
+
+                    if ($this->iniFile[$key]['type'] == 'submit' || $this->iniFile[$key]['type'] == 'reset') {
+                        $html .= '<input type="' . $this->iniFile[$key]['type'] . '"' .
+                                'value="' . $this->iniFile[$key]['value'] . '" />';
+                    } else {
+                        $html .=    '<input type="' .
                                 $this->iniFile[$key]['type'] . '" ' .
                                 'id="' . $tagType[1] . '" ' .
                                 'name="' . $tagType[1] . '" ' .
                                 'placeholder="Veuillez saisir votre ' . $tagType[1] . '"' .
                                 ' />';
                     $html .= '</div>';
-                
+                    }
             }
         }
 
