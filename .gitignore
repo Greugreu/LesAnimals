@@ -171,6 +171,9 @@ $RECYCLE.BIN/
 #PDO
 pdo.php
 
+#visualStudio
+.vs
+
 # End of https://www.gitignore.io/api/osx,linux,macos,windows,phpstorm+all
 /node_modules/
 /package-lock.json

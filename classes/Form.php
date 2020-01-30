@@ -10,7 +10,7 @@ class Form
     public function __construct($action, string $file)
     {
         $this->url = $action;
-        $this->iniFile = parse_ini_file("./conf/$file.ini");
+        $this->iniFile = parse_ini_file("./conf/$file.ini", true, INI_SCANNER_NORMAL);
     }
 
     public function displayForm() : string
@@ -22,6 +22,16 @@ class Form
             $html .= ' enctype="multipart/form-data"';
         }
         $html .= '>';
+
+        foreach ($this->iniFile as $input) {
+            $html .= $input['input_name'];
+            $html .= $input['input_surname'];
+            $html .= $input['input_password'];
+            $html .= $input['input_cfrmpass'];
+            $html .= $input['input_mail'];
+        }
+
+        $html .= '</form>';
 
         return $html;
     }
